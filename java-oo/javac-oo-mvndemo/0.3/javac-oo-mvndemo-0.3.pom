@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>java-oo</groupId>
+  <artifactId>javac-oo-mvndemo</artifactId>
+  <version>0.3</version>
+  <dependencies>
+    <dependency>
+      <groupId>java-oo</groupId>
+      <artifactId>javac-oo-plugin</artifactId>
+      <version>${project.version}</version> <!-- replace ${} to oo release version -->
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>${project.basedir}/../examples</sourceDirectory>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-compiler-plugin</artifactId>
+	  <version>3.1</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <repositories>
+    <repository>
+      <id>amelentev</id>
+      <url>http://amelentev.github.io/mvnrepo/</url>
+    </repository>
+  </repositories>
+  <!-- not needed for usage -->
+  <distributionManagement>
+    <repository>
+      <id>deploy</id>
+      <url>file:///home/mart/src/my/gitmvnrepo</url>
+    </repository>
+  </distributionManagement>
+</project>
